@@ -2,9 +2,9 @@ using System;
 
 namespace FirstProject_QuickStart
 {
-    public class MessageWriter
+    public class MessengerOwl
     {
-        public void Write(string message)
+        public void DeliverMessage(string message)
         {
             Console.WriteLine(message);
         }
