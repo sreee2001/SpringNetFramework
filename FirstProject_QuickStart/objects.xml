@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Spring.NET object configuration for the FirstProject_QuickStart project.
+  Defines the MessengerOwl and WelcomeCenter beans and their wiring.
+-->
 <objects xmlns="http://www.springframework.net">
-  <object id="quickStartMessengerOwl" type="FirstProject_QuickStart.MessengerOwl, FirstProject_QuickStart"/>
-  <object id="quickStartWelcomeCenter" type="FirstProject_QuickStart.WelcomeCenter, FirstProject_QuickStart">
+  <!-- MessengerOwl: Responsible for delivering messages in the fantasy setting -->
+  <object id="quickStartMessengerOwl" type="FirstProject_QuickStart.MessengerOwl, FirstProject_Quick_Start"/>
+  <!-- WelcomeCenter: Uses MessengerOwl to welcome guests -->
+  <object id="quickStartWelcomeCenter" type="FirstProject_Quick_Start.WelcomeCenter, FirstProject_Quick_Start">
     <property name="MessengerOwl" ref="quickStartMessengerOwl"/>
   </object>
 </objects>

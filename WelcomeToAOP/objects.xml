@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Spring.NET object configuration for the WelcomeToAOP project.
+  Demonstrates AOP by applying a magical aura interceptor to the MessengerOwl.
+-->
+<objects xmlns="http://www.springframework.net">
+  <!-- MessengerOwl: The magical owl that delivers messages -->
+  <object id="messengerOwl" type="WelcomeToAOP.MessengerOwl, WelcomeToAOP"/>
+  <!-- MagicAuraInterceptor: Adds magical effects before and after message delivery -->
+  <object id="magicAuraInterceptor" type="WelcomeToAOP.MagicAuraInterceptor, WelcomeToAOP"/>
+  <!-- owlProxy: Proxy that applies the interceptor to MessengerOwl -->
+  <object id="owlProxy" type="Spring.Aop.Framework.ProxyFactoryObject, Spring.Aop">
+    <property name="Target" ref="messengerOwl"/>
+    <property name="InterceptorNames">
+      <list>
+        <value>magicAuraInterceptor</value>
+      </list>
+    </property>
+  </object>
+</objects>
